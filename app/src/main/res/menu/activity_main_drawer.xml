@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_signal"
+            android:icon="@drawable/ic_menu_signal"
+            android:title="@string/menu_signal" />
+        <item
+            android:id="@+id/nav_info"
+            android:icon="@drawable/ic_menu_info"
+            android:title="@string/menu_info" />
+        <item
+            android:id="@+id/nav_Abacus"
+            android:icon="@drawable/ic_menu_abacus"
+            android:title="@string/menu_abacus" />
+    </group>
+    <item android:title="Gestion Utilisateur">
+        <menu>
+            <item
+                android:id="@+id/nav_form"
+                android:icon="@drawable/ic_menu_form"
+                android:title="@string/menu_form" />
+            <item
+                android:id="@+id/nav_profil"
+                android:icon="@drawable/ic_menu_profil"
+                android:title="@string/menu_profil" />
+        </menu>
+    </item>
+</menu>
