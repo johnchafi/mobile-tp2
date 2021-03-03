@@ -1,25 +1,22 @@
 package ca.ulaval.ima.tp2
 
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
-import ca.ulaval.ima.tp2.ui.gallery.GalleryFragment
-import ca.ulaval.ima.tp2.ui.home.HomeFragment
-import ca.ulaval.ima.tp2.ui.slideshow.SlideshowFragment
+import ca.ulaval.ima.tp2.ui.abacus.AbacusFragment
+import ca.ulaval.ima.tp2.ui.information.AboutFragment
+import ca.ulaval.ima.tp2.ui.internet.InternetFragment
+import ca.ulaval.ima.tp2.ui.formulaire.SlideshowFragment
+import ca.ulaval.ima.tp2.ui.formulaire.UserFormFragment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -63,20 +60,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val id = item.getItemId()
         if (id == R.id.nav_signal) {
             val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.nav_host_fragment, HomeFragment())
+            transaction.replace(R.id.nav_host_fragment, InternetFragment())
             transaction.commit()
         } else if (id == R.id.nav_info) {
             val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.nav_host_fragment, GalleryFragment())
+            transaction.replace(R.id.nav_host_fragment, AboutFragment())
             transaction.commit()
         } else if (id == R.id.nav_Abacus) {
             val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.nav_host_fragment, SlideshowFragment())
+            transaction.replace(R.id.nav_host_fragment, AbacusFragment())
             transaction.commit()
         }
         else if (id == R.id.nav_form) {
             val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.nav_host_fragment, SlideshowFragment())
+            transaction.replace(R.id.nav_host_fragment, UserFormFragment())
             transaction.commit()
         }
         else if (id == R.id.nav_profil) {
