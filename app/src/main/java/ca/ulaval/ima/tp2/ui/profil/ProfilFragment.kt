@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import ca.ulaval.ima.tp1.User
 import ca.ulaval.ima.tp2.MainActivity
@@ -43,21 +44,16 @@ class ProfilFragment : Fragment() {
             }
 
         }
-        if (user == null) {
-            user = User(
-                getString(R.string.firstname),
-                getString(R.string.lastname),
-                getString(R.string.sex_male_field),
-                getString(R.string.program),
-                getString(R.string.birthdate),
-            )
+        if (user != null) {
+            this.setInformation(view,user)
         }
-        this.setInformation(view,user)
 
     }
 
     override fun onViewCreated(view: View,savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val title: String = getString(R.string.title_profil)
+        (activity as AppCompatActivity).supportActionBar?.title = title
         this.getUserInformation(view)
     }
     override fun onCreateView(

@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import ca.ulaval.ima.tp1.User
@@ -129,10 +130,11 @@ class UserFormFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //calla functions of this fragment
+        val title: String = getString(R.string.title_form)
+        (activity as AppCompatActivity).supportActionBar?.title = title
         this.setDatePicker(view)
         this.setSpinnerValue(view)
         this.submit(view)
-
     }
 
     override fun onCreateView(

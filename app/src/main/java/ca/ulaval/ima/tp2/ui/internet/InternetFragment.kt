@@ -33,7 +33,7 @@ class InternetFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val title: String = getString(R.string.navbar_internet_status);
+        val title: String = getString(R.string.navbar_internet_status)
         (activity as AppCompatActivity).supportActionBar?.title = title
         val button: Button = view.findViewById(R.id.internet_status_button)
         button.setOnClickListener { setInternetStatus(view) }

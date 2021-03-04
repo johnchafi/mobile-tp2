@@ -19,6 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="vertical"
+                android:textSize="12sp"
                 android:text="@string/about_text"
                 android:layout_marginLeft="14dp"
                 android:layout_marginRight="14dp"

@@ -12,6 +12,9 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import androidx.fragment.app.replace
 import ca.ulaval.ima.tp2.ui.abacus.AbacusFragment
 import ca.ulaval.ima.tp2.ui.information.AboutFragment
 import ca.ulaval.ima.tp2.ui.internet.InternetFragment
@@ -39,8 +42,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val navView: NavigationView = findViewById(R.id.nav_view)
         navView.setNavigationItemSelectedListener(this)
+        //supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, AboutFragment())
+        this.initiateFragment(AboutFragment())
     }
-
+    fun initiateFragment(fg : Fragment){
+        val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
+        ft.replace(R.id.nav_host_fragment, fg)
+        ft.commit()
+    }
     override fun onBackPressed() {
         val drawer = findViewById<View?>(R.id.drawer_layout) as DrawerLayout
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -49,9 +58,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             super.onBackPressed()
         }
     }
-
-
-
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()

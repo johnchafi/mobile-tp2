@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import ca.ulaval.ima.tp2.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,5 +26,10 @@ class AboutFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_about, container, false)
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val title: String = getString(R.string.title_info)
+        (activity as AppCompatActivity).supportActionBar?.title = title
     }
 }
