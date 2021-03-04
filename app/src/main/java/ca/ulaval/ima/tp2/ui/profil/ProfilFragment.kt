@@ -55,6 +55,9 @@ class ProfilFragment : Fragment() {
         val title: String = getString(R.string.title_profil)
         (activity as AppCompatActivity).supportActionBar?.title = title
         this.getUserInformation(view)
+        if (activity != null) {
+            (activity as MainActivity?)!!.setBackButton()}
+
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

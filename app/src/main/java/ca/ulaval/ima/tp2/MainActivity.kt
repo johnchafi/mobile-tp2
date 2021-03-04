@@ -93,5 +93,32 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
 
     }
+    fun setBurgerButton(){
+        if (supportActionBar != null) {
+            supportActionBar?.setDisplayHomeAsUpEnabled(true);
+        }
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        val drawer = findViewById<View?>(R.id.drawer_layout) as DrawerLayout
+        drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED)
+        val toggle = ActionBarDrawerToggle(this, drawer,
+            toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState()
+    }
+
+    fun setBackButton(){
+
+        val drawer = findViewById<View?>(R.id.drawer_layout) as DrawerLayout
+        drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+        val toolBar: Toolbar = findViewById(R.id.toolbar)
+        toolBar.setNavigationOnClickListener {
+            onBackPressed()
+            this@MainActivity.setBurgerButton()
+        }
+        if (supportActionBar != null) {
+            supportActionBar?.setDisplayHomeAsUpEnabled(true);
+        }
+
+    }
 
 }
