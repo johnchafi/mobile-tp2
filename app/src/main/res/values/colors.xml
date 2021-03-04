@@ -10,4 +10,6 @@
     <color name="Red_laval">#DC1300</color>
     <color name="red_color">#FF0000</color>
     <color name="green_color">#00FF00</color>
+    <color name="colorPrimaryLightGrey">#E9E6E7</color>
+    <color name="colorPrimaryBlack">#FF000000</color>
 </resources>

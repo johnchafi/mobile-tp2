@@ -6,7 +6,7 @@
     tools:context=".ui.information.AboutFragment">
 
     <ScrollView
-        android:id="@+id/scrollView1"
+        android:id="@+id/scrollView_about"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:ignore="UselessParent">

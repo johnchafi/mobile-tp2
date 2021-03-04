@@ -17,6 +17,7 @@ import ca.ulaval.ima.tp2.ui.information.AboutFragment
 import ca.ulaval.ima.tp2.ui.internet.InternetFragment
 import ca.ulaval.ima.tp2.ui.formulaire.SlideshowFragment
 import ca.ulaval.ima.tp2.ui.formulaire.UserFormFragment
+import ca.ulaval.ima.tp2.ui.profil.ProfilFragment
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -78,7 +79,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         else if (id == R.id.nav_profil) {
             val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.nav_host_fragment, SlideshowFragment())
+            transaction.replace(R.id.nav_host_fragment, ProfilFragment())
             transaction.commit()
         }
         val drawer = findViewById<View?>(R.id.drawer_layout) as DrawerLayout
