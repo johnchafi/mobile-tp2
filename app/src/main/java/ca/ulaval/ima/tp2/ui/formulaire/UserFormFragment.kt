@@ -1,5 +1,6 @@
 package ca.ulaval.ima.tp2.ui.formulaire
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener
 import android.content.Context
@@ -17,8 +18,10 @@ import ca.ulaval.ima.tp1.User
 import ca.ulaval.ima.tp2.R
 import ca.ulaval.ima.tp2.ui.profil.ProfilFragment
 import java.text.DateFormat
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 /**
  * A simple [Fragment] subclass.
@@ -56,8 +59,7 @@ class UserFormFragment : Fragment() {
         if (error.equals("") && user.nom.equals("")) {
             error = "Nom ne doit pas être vide !";
         }
-        Log.i("yes ", user.bd.substring(0, 4))
-        if (error.equals("") && user.bd.equals("") || isDateValide (user.bd)) {
+        if (error.equals("") && !this.isDateValid(user.bd, datePattern)) {
             error = "La date n'est pas valide !"
         }
         if (!error.equals("")) {
@@ -68,10 +70,16 @@ class UserFormFragment : Fragment() {
 
     }
 
-    fun isDateValide(par: String): Boolean{
-        if(par.substring(0,4).toInt() < 2021 ) return false;
-        else return true;
-
+    fun isDateValid(date: String?, format: String?): Boolean {
+        return try {
+            @SuppressLint("SimpleDateFormat") val df: DateFormat =
+                SimpleDateFormat(format)
+            df.isLenient = false
+            df.parse(date)
+            true
+        } catch (e: ParseException) {
+            false
+        }
     }
 
     fun SubmitForm(view: View){
