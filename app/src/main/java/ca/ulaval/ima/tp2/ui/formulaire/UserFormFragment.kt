@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -55,7 +56,8 @@ class UserFormFragment : Fragment() {
         if (error.equals("") && user.nom.equals("")) {
             error = "Nom ne doit pas être vide !";
         }
-        if (error.equals("") && user.bd.equals("")) {
+        Log.i("yes ", user.bd.substring(0, 4))
+        if (error.equals("") && user.bd.equals("") || isDateValide (user.bd)) {
             error = "La date n'est pas valide !"
         }
         if (!error.equals("")) {
@@ -63,6 +65,12 @@ class UserFormFragment : Fragment() {
             return false
         }
         return true
+
+    }
+
+    fun isDateValide(par: String): Boolean{
+        if(par.substring(0,4).toInt() < 2021 ) return false;
+        else return true;
 
     }
 
