@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.information.AboutFragment">
 
-    <ScrollView
-        android:id="@+id/scrollView_about"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="UselessParent">
-
-        <LinearLayout
+        <TextView
+            android:textColor="@color/black"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-            <TextView
-                android:textColor="@color/black"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="vertical"
-                android:textSize="12sp"
-                android:text="@string/about_text"
-                android:layout_marginLeft="14dp"
-                android:layout_marginRight="14dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginBottom="14dp"/>
-
-        </LinearLayout>
-    </ScrollView>
-</FrameLayout>
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:scrollbarSize="12sp"
+            android:text="@string/about_text"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="14dp"/>
+</androidx.core.widget.NestedScrollView>

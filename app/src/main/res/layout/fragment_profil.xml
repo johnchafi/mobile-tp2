@@ -130,7 +130,5 @@
                 android:textColor="@color/colorPrimaryBlack" />
         </LinearLayout>
     </ScrollView>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -19,7 +19,6 @@ import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
-
 /**
  * A simple [Fragment] subclass.
  * Use the [UserFormFragment.newInstance] factory method to
